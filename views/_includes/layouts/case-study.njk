@@ -1,0 +1,107 @@
+{% extends "layouts/base.njk" %}
+{% set next = collections.case_studies | getNextCollectionItem(page) %}
+{% set previous = collections.case_studies | getPreviousCollectionItem(page) %}
+
+{% block content %}
+		<section class="case_hero">
+				{% picture hero.image.src,
+				hero.image.alt,
+				'case_hero__image' %}
+		</section>
+
+		<div class="[ container flow ]" data-size="md">
+				{% for block in blocks %}
+						{% if block.type == 'image-with-text' %}
+								<section class="image_with_text">
+										<div class="block_head">
+												<h2>{{block.title}}</h2>
+												<h3>{{block.subhead}}</h3>
+										</div>
+										<div class="[ gr_2_col__tablet ai_center ]" style="--column-1: 0.75fr; ---column-2: 1.5fr; --gap: 30px; --gap-tb: 80px">
+												{% picture block.image.src,
+												block.image.alt,
+												'image_with_text__image' %}
+												<p class="image_with_text__content">{{block.content | safe}}</p>
+										</div>
+								</section>
+
+						{% elif block.type == 'two-column'%}
+								<section class="two_column">
+										<div class="block_head">
+												<h2>{{block.title}}</h2>
+												<h3>{{block.subhead}}</h3>
+										</div>
+										<div class="two_column_text">
+												<p>{{block.content | safe}}</p>
+										</div>
+								</section>
+
+						{% elif block.type == 'text-block'%}
+								<section class="[ text_block ] [ gr_2_col__tablet ai_center ]" style="--column-1: auto; --column-2: 1fr; --gap: 10px; --gap-tb: 60px">
+										<h2 class="text_block__title">{{block.title}}</h2>
+										<p>{{block.content | safe}}</p>
+								</section>
+
+						{% elif block.type == 'single-image'%}
+								<section class="single_image">
+										{% picture block.image.src,
+										block.image.alt,
+										'single_image__image' %}
+								</section>
+
+						{% elif block.type == 'image-grid'%}
+								<section class="[ image_grid ] [ gr_auto gap_lg ]" style="--fit: auto-fit">
+										{% for image in block.images %}
+												{% picture image.src,
+												image.alt %}
+										{% endfor %}
+								</section>
+
+						{% elif block.type == 'gallery'%}
+								<section class="[ gallery ]">
+										<div class="gallery__current">
+												{% picture block
+														.images[0]
+														.src,
+												block
+														.images[0]
+														.alt %}
+										</div>
+										<ul role="list" class="[ gallery__images] [ gr_auto gap_md jc_around ]" style="--fit: auto-fit; --min-content: 100px">
+												{% for image in block.images %}
+														<li class="gallery__image">
+																<button>
+																		{% picture image.src,
+																		image.alt %}
+																		<span class="visually_hidden">View
+																				{{image.alt}}</span>
+																</button>
+														</li>
+												{% endfor %}
+										</ul>
+								</section>
+						{% endif %}
+				{% endfor %}
+
+				<section class="case_alternate">
+						{% if previous.url %}
+								{% set prevLink = previous.url %}
+						{% else %}
+								{% set last = collections.case_studies | last %}
+								{% set prevLink = last.url %}
+						{% endif %}
+
+						{% if next.url %}
+								{% set nextLink = next.url %}
+						{% else %}
+								{% set first = collections.case_studies | first %}
+								{% set nextLink = first.url %}
+						{% endif %}
+
+						<h2>View Other Case Studies</h2>
+						<a href="{{prevLink}}">Preview</a>
+						<a href="{{nextLink}}">Next</a>
+
+				</section>
+		</div>
+{% endblock %}
