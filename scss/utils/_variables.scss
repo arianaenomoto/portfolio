@@ -1,3 +1,7 @@
-$color-primary: red;
-$color-secondary: blue;
-$color-tertiary: green;
+:root {
+  --color-primary: #0053e1;
+  --color-secondary: #ff4617;
+  --color-tertiary: #fef335;
+  --color-bg: white;
+  --color-text: #1d1d1d;
+}

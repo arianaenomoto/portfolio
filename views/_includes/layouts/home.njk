@@ -5,7 +5,53 @@
 
 {% block content %}
     <article data-template="home">
-        homepage
+        <div class="[ container flow ]" data-size="md">
+            <section class="[ home-hero ]">
+                {% picture hero.image.src,
+                hero.image.alt,
+                '[ home-hero__image ] [ w-100 ]' %}
+                <div class="home-hero__content">
+                    <h2>{{hero.title}}</h2>
+                    <h3>{{hero.subhead}}</h3>
+                    <hr/>
+                    <p data-size="md">{{hero.content}}</p>
+                    <p class="home-hero__blurb" data-size="lg">{{hero.blurb | safe}}</p>
+                </div>
+            </section>
+            <section id="work" class="home-cases">
+                <h2 class="[ uppercase ta-center ]">Case Studies</h2>
+                <ul class="home-cases__container" role="list">
+                    {% for item in collections.case_studies %}
+                        <li class="home-cases__item">
+                            <a href="{{item.url}}">
+                                <span class="visually-hidden">View
+                                    {{item.data.title}}</span>
+                                {% picture item.data.featured_image.src,
+                                item.data.featured_image.alt,
+                                'home-case__image' %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section class="home-projects">
+                <h2 class="[ uppercase ta-center ]">Projects</h2>
+                <ul class="[ home-projects__container ] [ gr-auto gap-md ]" style="--fit: auto-fit; --min-content: 300px;" role="list">
+                    {% for project in projects %}
+                        <li>
+                            {% picture project.image.src,
+                            project.image.alt,
+                            'home-project__image' %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section id="contact" class="home-contact">
+                <h2 class="[ home-contact__title ] [ ta-center ]">{{contact.title}}</h2>
+                <h3 class="ta-center m-auto">{{contact.blurb}}
+                    <a href="mailto:{{meta.email}}">{{meta.email}}</a>
+                </h3>
+            </section>
+        </div>
     </article>
-
 {% endblock %}

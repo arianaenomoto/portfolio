@@ -9,9 +9,10 @@
 @import './base/typography';
 // Layout
 @import './layout/header';
+@import './layout/footer';
 @import './layout/navigation';
 // Components
-
-// Slices
-
+@import './components/blocks';
 // Pages
+@import './pages/home.scss';
+@import './pages/case-study';

@@ -1,0 +1,21 @@
+- image:
+    src: 'img/hero-image.jpg'
+    alt: 'project alt text'
+  title: 'Project One'
+  
+  
+- image: 
+    src: 'img/hero-image.jpg'
+    alt: 'project alt text'
+  title: 'Project Two'
+  
+  
+- image: 
+    src: 'img/hero-image.jpg'
+    alt: 'project alt text'
+  title: 'Project Three'
+  
+- image: 
+    src: 'img/hero-image.jpg'
+    alt: 'project alt text'
+  title: 'Project Four'
