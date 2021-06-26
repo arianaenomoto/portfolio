@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../build/js/scripts.js"],
+  "sourcesContent": ["const galleryElements = document.querySelectorAll('.gallery');\n\ngalleryElements.forEach((gallery) => {\n  const current = gallery.querySelector('.gallery__current');\n  const galleryImages = gallery.querySelectorAll('.gallery__image');\n\n  galleryImages.forEach((image) => {\n    image.addEventListener('click', () => {\n      // Clone the image picture and replace the current with the cloned node\n      const slidePic = image.querySelector('picture');\n      const updatedSlide = slidePic.cloneNode(true);\n\n      const currentSlide = current.querySelector('picture');\n      currentSlide.remove();\n      current.appendChild(updatedSlide);\n    });\n  });\n});\n"],
+  "mappings": "AAAA,GAAM,GAAkB,SAAS,iBAAiB,YAElD,EAAgB,QAAQ,AAAC,GAAY,CACnC,GAAM,GAAU,EAAQ,cAAc,qBAGtC,AAFsB,EAAQ,iBAAiB,mBAEjC,QAAQ,AAAC,GAAU,CAC/B,EAAM,iBAAiB,QAAS,IAAM,CAGpC,GAAM,GAAe,AADJ,EAAM,cAAc,WACP,UAAU,IAGxC,AADqB,EAAQ,cAAc,WAC9B,SACb,EAAQ,YAAY",
+  "names": []
+}
