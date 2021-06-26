@@ -6,49 +6,49 @@
 {% block content %}
     <article data-template="home">
         <div class="[ container flow ]" data-size="md">
-            <section class="[ home_hero ]">
+            <section class="[ home-hero ]">
                 {% picture hero.image.src,
                 hero.image.alt,
-                '[ home_hero__image ] [ w__100 ]' %}
-                <div class="home_hero__content">
+                '[ home-hero__image ] [ w-100 ]' %}
+                <div class="home-hero__content">
                     <h2>{{hero.title}}</h2>
                     <h3>{{hero.subhead}}</h3>
                     <hr/>
                     <p data-size="md">{{hero.content}}</p>
-                    <p class="home_hero__blurb" data-size="lg">{{hero.blurb | safe}}</p>
+                    <p class="home-hero__blurb" data-size="lg">{{hero.blurb | safe}}</p>
                 </div>
             </section>
-            <section id="work" class="home_cases">
-                <h2 class="[ uppercase ta_center ]">Case Studies</h2>
-                <ul class="home_cases__container" role="list">
+            <section id="work" class="home-cases">
+                <h2 class="[ uppercase ta-center ]">Case Studies</h2>
+                <ul class="home-cases__container" role="list">
                     {% for item in collections.case_studies %}
-                        <li class="home_cases__item">
+                        <li class="home-cases__item">
                             <a href="{{item.url}}">
-                                <span class="visually_hidden">View
+                                <span class="visually-hidden">View
                                     {{item.data.title}}</span>
                                 {% picture item.data.featured_image.src,
                                 item.data.featured_image.alt,
-                                'home_case__image' %}
+                                'home-case__image' %}
                             </a>
                         </li>
                     {% endfor %}
                 </ul>
             </section>
-            <section class="home_projects">
-                <h2 class="[ uppercase ta_center ]">Projects</h2>
-                <ul class="[ home_projects__container ] [ gr_auto gap_md ]" style="--fit: auto-fit; --min-content: 300px;" role="list">
+            <section class="home-projects">
+                <h2 class="[ uppercase ta-center ]">Projects</h2>
+                <ul class="[ home-projects__container ] [ gr-auto gap-md ]" style="--fit: auto-fit; --min-content: 300px;" role="list">
                     {% for project in projects %}
                         <li>
                             {% picture project.image.src,
                             project.image.alt,
-                            'home_project__image' %}
+                            'home-project__image' %}
                         </li>
                     {% endfor %}
                 </ul>
             </section>
-            <section id="contact" class="home_contact">
-                <h2 class="[ home_contact__title ] [ ta_center ]">{{contact.title}}</h2>
-                <h3 class="ta_center m_auto">{{contact.blurb}}
+            <section id="contact" class="home-contact">
+                <h2 class="[ home-contact__title ] [ ta-center ]">{{contact.title}}</h2>
+                <h3 class="ta-center m-auto">{{contact.blurb}}
                     <a href="mailto:{{site.email}}">{{site.email}}</a>
                 </h3>
             </section>

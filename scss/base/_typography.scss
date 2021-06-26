@@ -1,0 +1,45 @@
+h2 {
+  font-size: clamp(36px, 3vw, 4rem);
+}
+
+h3 {
+  font-size: clamp(24px, 2.5vw, 2rem);
+}
+
+p {
+  max-width: 75ch;
+  font-size: 1.2em;
+
+  &[data-size='md'] {
+    font-size: 1.4em;
+  }
+
+  &[data-size='lg'] {
+    font-size: 1.6em;
+  }
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-right {
+  text-align: right;
+}

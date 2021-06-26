@@ -1,0 +1,59 @@
+@import './config.scss';
+
+// HERO SECTION
+.home-hero {
+  display: grid;
+  grid-gap: 40px;
+
+ @include media('<=tablet') {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+		margin-top: 50px;
+  }
+}
+
+.home-hero__image {
+  height: 500px;
+}
+
+.home-hero__content {
+  hr {
+    width: 30%;
+    margin: 20px auto 20px 0;
+  }
+
+  .home-hero__blurb {
+    margin-top: 20px;
+  }
+}
+
+// PROJECT SECTION
+.home-cases__container,
+.home-projects__container {
+  margin-top: 50px;
+}
+
+.home-cases__container {
+  --col-height: 150px;
+  display: grid;
+  grid-auto-rows: var(--col-height);
+  grid-gap: 20px;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+
+  .home-cases__item {
+    height: var(--col-height);
+    .home-case__image {
+      height: 100%;
+    }
+  }
+}
+
+// CONTACT SECTION
+.home-contact {
+  margin-bottom: 100px;
+
+  .home-contact__title {
+    margin-bottom: 20px;
+  }
+}
