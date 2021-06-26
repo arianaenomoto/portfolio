@@ -19,6 +19,7 @@ module.exports = (config) => {
   ]);
 
   config.addPassthroughCopy('assets');
+  config.addPassthroughCopy('img');
   config.addPassthroughCopy('js');
 
   // Set YAML as default content file
