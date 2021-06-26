@@ -1,7 +1,7 @@
 .text-block__title {
   position: relative;
 
-	@include media('<=tablet') {
+	@include media('>=tablet') {
     padding-right: var(--gap-tb);
     &:after {
       position: absolute;
@@ -55,4 +55,8 @@
       height: 200px;
     }
   }
+}
+
+.image-with-text__content{
+	@include push--auto;
 }

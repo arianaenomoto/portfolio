@@ -1,11 +1,9 @@
-@import './config.scss';
-
 // HERO SECTION
 .home-hero {
   display: grid;
   grid-gap: 40px;
 
- @include media('<=tablet') {
+ @include media(">=tablet") {
     grid-template-columns: 1fr 1.5fr;
     align-items: center;
 		margin-top: 50px;

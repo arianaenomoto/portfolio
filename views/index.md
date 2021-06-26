@@ -1,8 +1,8 @@
 ---
 layout: layouts/home.njk
 title: Home
-pageStylesheets: ['/css/styles.css', '/css/home.css']
-pageScripts: ['/js/scripts.js']
+stylesheets: ['/css/styles.css']
+scripts: ['/js/scripts.js']
 meta_title: Home
 # HERO SECTION
 hero:

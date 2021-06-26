@@ -1,12 +1,12 @@
-.site_header {
+.site-header {
   padding: 30px 0;
 }
 
-.site_branding {
+.site-branding {
   font-size: clamp(24px, 3vw, 2rem);
 }
 
-.site_nav {
+.site-nav {
   a {
     &:not(:last-of-type) {
       margin-right: 20px;

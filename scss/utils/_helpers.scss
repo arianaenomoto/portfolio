@@ -242,7 +242,7 @@
   display: grid;
   grid-gap: var(--gap, 0px);
 
-  @include media('<=tablet') {
+  @include media('>=tablet') {
     grid-gap: var(--gap-tb, var(--gap));
     grid-template-columns: var(--column-1, 1fr) var(--column-2, 1fr);
   }
