@@ -1,0 +1,4 @@
+{# Follows the same strucutre as Prismic Images #}
+{% macro render(image, class = '') %}
+		<img decoding="async" loading="lazy" src="{{image.url}}" class="{{class}}" height="{{image.dimensions.height}}" width="{{image.dimensions.width}}" {% if image.alt %} alt="{{image.alt}}" title="{{image.alt}}" {% else %} role="presentation" {% endif %}>
+{% endmacro %}

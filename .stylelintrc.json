@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-rational-order"],
+  "plugins": ["stylelint-a11y", "stylelint-scss", "stylelint-order"],
+  "rules": {
+    "a11y/media-prefers-reduced-motion": true,
+    "a11y/no-outline-none": true,
+    "a11y/selector-pseudo-class-focus": true,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "scss/selector-no-redundant-nesting-selector": true,
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-order": [],
+    "plugin/rational-order": [
+      true,
+      {
+        "border-in-box-model": false,
+        "empty-line-between-groups": false
+      }
+    ]
+  }
+}

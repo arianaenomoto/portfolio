@@ -1,0 +1,27 @@
+{% set siteTitle = meta.title %}
+{% set pageDescription = meta.description %}
+
+{% if meta_description %}
+    {% set pageDescription = meta_description %}
+{% endif %}
+
+{% if meta_title %}
+    {% set siteTitle = meta_title + ' | ' + meta.title %}
+{% endif %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>{{siteTitle}}</title>
+    {# Social Cards #}
+    <meta name="description" content="{{pageDescription}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{siteTitle}}">
+    <meta property="og:description" content="{{pageDescription}}">
+    {# Render stylesheets #}
+    {% for item in stylesheets %}
+        <link rel="stylesheet" href="{{item}}">
+    {% endfor %}
+</head>
